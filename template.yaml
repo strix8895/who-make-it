@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  SAM Template for who make it
+
+Parameters:
+  IAMRoleARN:
+    Type: String
+
+Globals:
+  Function:
+    Timeout: 180
+    Runtime: python3.6
+
+Resources:
+  FunctionWhomakeit:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: application/
+      Handler: function.lambda_handler
+      Role: !Ref IAMRoleARN
+      Events:
+        TestEvent:
+          Type: CloudWatchEvent
+          Properties:
+            Pattern:
+              detail:
+                state:
+                  - terminated
+
+Outputs:
+  FunctionWhomakeit:
+    Description: "Who make it Lambda Function ARN"
+    Value: !GetAtt FunctionWhomakeit.Arn

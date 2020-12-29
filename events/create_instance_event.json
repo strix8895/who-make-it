@@ -1,0 +1,217 @@
+{
+    "eventVersion": "1.05",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "XXXXXXXXXXXXXXXXXXXXX",
+      "arn": "arn:aws:iam::123456789123:user/testuser",
+      "accountId": "123456789123",
+      "accessKeyId": "XXXXXXXXXXXXXXXXXXXXX",
+      "userName": "xxxxxxxxxxxx",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "false",
+          "creationDate": "2019-07-29T04:54:48Z"
+        }
+      },
+      "invokedBy": "signin.amazonaws.com"
+    },
+    "eventTime": "2019-07-29T06:22:42Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "RunInstances",
+    "awsRegion": "ap-northeast-1",
+    "sourceIPAddress": "X.X.X.X",
+    "userAgent": "signin.amazonaws.com",
+    "requestParameters": {
+      "instancesSet": {
+        "items": [
+          {
+            "imageId": "ami-xxxxxxxxxxxxxxx",
+            "minCount": 1,
+            "maxCount": 1,
+            "keyName": "xxxxxxxxxxxxxx"
+          }
+        ]
+      },
+      "instanceType": "t3.micro",
+      "blockDeviceMapping": {
+        "items": [
+          {
+            "deviceName": "/dev/xvda",
+            "ebs": {
+              "volumeSize": 8,
+              "deleteOnTermination": true,
+              "volumeType": "gp2"
+            }
+          }
+        ]
+      },
+      "tenancy": "default",
+      "monitoring": {
+        "enabled": false
+      },
+      "disableApiTermination": false,
+      "instanceInitiatedShutdownBehavior": "stop",
+      "networkInterfaceSet": {
+        "items": [
+          {
+            "deviceIndex": 0,
+            "subnetId": "subnet-xxxxxxxxxxxxxxxx",
+            "description": "Primary network interface",
+            "privateIpAddress": "XX.XX.XX.XX",
+            "deleteOnTermination": true,
+            "associatePublicIpAddress": true,
+            "groupSet": {
+              "items": [
+                {
+                  "groupId": "sg-XXXXXXXXXXXXXXXXX"
+                }
+              ]
+            },
+            "ipv6AddressCount": 0
+          }
+        ]
+      },
+      "ebsOptimized": false,
+      "tagSpecificationSet": {
+        "items": [
+          {
+            "resourceType": "instance",
+            "tags": [
+              {
+                "key": "Name",
+                "value": "XXXXXXXXXXXXXXXX"
+              }
+            ]
+          },
+          {
+            "resourceType": "volume",
+            "tags": [
+              {
+                "key": "Name",
+                "value": "XXXXXXXXXXXXXXXX"
+              }
+            ]
+          }
+        ]
+      },
+      "capacityReservationSpecification": {
+        "capacityReservationPreference": "open"
+      }
+    },
+    "responseElements": {
+      "requestId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "reservationId": "x-xxxxxxxxxxxxxxxxx",
+      "ownerId": "123456789123",
+      "groupSet": {},
+      "instancesSet": {
+        "items": [
+          {
+            "instanceId": "i-xxxxxxxxxxxxxxxx",
+            "imageId": "ami-xxxxxxxxxxxxxxxxxx",
+            "instanceState": {
+              "code": 0,
+              "name": "pending"
+            },
+            "privateDnsName": "ip-XX-XX-XX-XX.ap-northeast-1.compute.internal",
+            "keyName": "xxxxxxxxxxx",
+            "amiLaunchIndex": 0,
+            "productCodes": {},
+            "instanceType": "t1.micro",
+            "launchTime": 1564381362000,
+            "placement": {
+              "availabilityZone": "ap-northeast-1b",
+              "tenancy": "default"
+            },
+            "monitoring": {
+              "state": "disabled"
+            },
+            "subnetId": "subnet-xxxxxxxxxxxxxxx",
+            "vpcId": "vpc-xxxxxxxxxxxxxxx",
+            "privateIpAddress": "XX.XX.XX.XX",
+            "stateReason": {
+              "code": "pending",
+              "message": "pending"
+            },
+            "architecture": "x86_64",
+            "rootDeviceType": "ebs",
+            "rootDeviceName": "/dev/xvda",
+            "blockDeviceMapping": {},
+            "virtualizationType": "hvm",
+            "hypervisor": "xen",
+            "tagSet": {
+              "items": [
+                {
+                  "key": "Name",
+                  "value": "xxxxxxxxxxxx"
+                }
+              ]
+            },
+            "groupSet": {
+              "items": [
+                {
+                  "groupId": "sg-xxxxxxxxxxxx",
+                  "groupName": "xxxxxxxxxxxxxx"
+                }
+              ]
+            },
+            "sourceDestCheck": true,
+            "networkInterfaceSet": {
+              "items": [
+                {
+                  "networkInterfaceId": "eni-xxxxxxxxxxxxxxxx",
+                  "subnetId": "subnet-xxxxxxxxxxxxxxx",
+                  "vpcId": "vpc-xxxxxxxxxxxxxxx",
+                  "description": "Primary network interface",
+                  "ownerId": "123456789123",
+                  "status": "in-use",
+                  "macAddress": "xx:xx:xx:xx:xx:xx",
+                  "privateIpAddress": "XX.XX.XX.XX",
+                  "privateDnsName": "ip-XX-XX-XX-XX.ap-northeast-1.compute.internal",
+                  "sourceDestCheck": true,
+                  "interfaceType": "interface",
+                  "groupSet": {
+                    "items": [
+                      {
+                        "groupId": "sg-xxxxxxxxxxxxxxxxxxx",
+                        "groupName": "xxxxxxxxxxxxxxxxxx"
+                      }
+                    ]
+                  },
+                  "attachment": {
+                    "attachmentId": "eni-attach-xxxxxxxxxxxxxxxxx",
+                    "deviceIndex": 0,
+                    "status": "attaching",
+                    "attachTime": 1564381362000,
+                    "deleteOnTermination": true
+                  },
+                  "privateIpAddressesSet": {
+                    "item": [
+                      {
+                        "privateIpAddress": "XX.XX.XX.XX",
+                        "privateDnsName": "ip-XX-XX-XX-XX.ap-northeast-1.compute.internal",
+                        "primary": true
+                      }
+                    ]
+                  },
+                  "ipv6AddressesSet": {},
+                  "tagSet": {}
+                }
+              ]
+            },
+            "ebsOptimized": false,
+            "cpuOptions": {
+              "coreCount": 1,
+              "threadsPerCore": 1
+            },
+            "capacityReservationSpecification": {
+              "capacityReservationPreference": "open"
+            }
+          }
+        ]
+      }
+    },
+    "requestID": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "eventID": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "eventType": "AwsApiCall",
+    "recipientAccountId": "123456789123"
+  }
