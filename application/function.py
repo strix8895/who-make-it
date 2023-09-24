@@ -96,7 +96,7 @@ def lambda_handler(event, context):
                 ResourceName=dbarn,
                  Tags=[
                     {
-                        'Key': 'Whoami',
+                        'Key': 'Author',
                         'Value': useridentify
                     },
                 ]
